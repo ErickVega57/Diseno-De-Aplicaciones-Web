@@ -5,6 +5,9 @@
   <img width="200" height="200" alt="Maximiliano" src="Imagenes/Maximiliano.jpeg" />
 
 - Carrillo Alvarado Maximiliano
+
+<img width="200" height="200" alt="Alejandro" src="Imagenes/Alejandro.jpg" />
+
 - Flores Vera Alejandro Manuel
 
   <img width="200" height="200" alt="WhatsApp Image 2026-08-31 at 5 30 24 PM" src="https://github.com/user-attachments/assets/d60e0c7c-828f-4c99-872b-0e4db2e9ab71" />
