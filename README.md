@@ -2,7 +2,7 @@
 
 ## Integrantes:
 
-  <img width="200" height="200" alt="Maximiliano" src="Imagen/Maximiliano.jpeg" />
+  <img width="200" height="200" alt="Maximiliano" src="Imagenes/Maximiliano.jpeg" />
 
 - Carrillo Alvarado Maximiliano
 - Flores Vera Alejandro Manuel
