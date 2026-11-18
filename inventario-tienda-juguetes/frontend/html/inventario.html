@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de inventario de productos de una jugueteria">
+    <title>Inventario de productos</title>
+</head>
+<body>
+    <header>
+        <h1>Inventario de productos</h1>
+        <nav aria-label="Navegacion principal">
+            <a href="login.html">Cerrar sesion</a>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="tituloFormularioProducto">
+            <h2 id="tituloFormularioProducto">Agregar o editar producto</h2>
+
+            <form id="formularioProducto">
+                <input type="hidden" id="inputIdProducto" name="idProducto">
+
+                <div>
+                    <label for="inputNombreProducto">Nombre del producto</label>
+                    <input
+                        type="text"
+                        id="inputNombreProducto"
+                        name="nombreProducto"
+                        maxlength="100"
+                        placeholder="Ej. Lego Classic"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="inputPrecioProducto">Precio</label>
+                    <input
+                        type="number"
+                        id="inputPrecioProducto"
+                        name="precioProducto"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="Ej. 499.90"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="inputStockProducto">Stock</label>
+                    <input
+                        type="number"
+                        id="inputStockProducto"
+                        name="stockProducto"
+                        min="0"
+                        step="1"
+                        placeholder="Ej. 10"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="inputCategoriaProducto">Categoria</label>
+                    <select
+                        id="inputCategoriaProducto"
+                        name="categoriaProducto"
+                        required
+                    >
+                        <option value="">Selecciona una categoria</option>
+                        <option value="Construccion">Construccion</option>
+                        <option value="Figuras de accion">Figuras de accion</option>
+                        <option value="Juegos de mesa">Juegos de mesa</option>
+                        <option value="Juguetes educativos">Juguetes educativos</option>
+                        <option value="Manualidades">Manualidades</option>
+                        <option value="Muñecas">Muñecas</option>
+                        <option value="Peluches">Peluches</option>
+                        <option value="Primera infancia">Primera infancia</option>
+                        <option value="Vehiculos">Vehiculos</option>
+                        <option value="Juguetes de aire libre">Juguetes de aire libre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="inputImagenProducto">URL de la imagen</label>
+                    <input
+                        type="url"
+                        id="inputImagenProducto"
+                        name="imagenProducto"
+                        placeholder="https://ejemplo.com/imagen.jpg"
+                    >
+                </div>
+
+                <div>
+                    <button type="submit" id="botonGuardarProducto">Guardar producto</button>
+                    <button type="reset" id="botonLimpiarFormulario">Limpiar formulario</button>
+                </div>
+            </form>
+
+            <p id="mensajeFormularioProducto" role="alert" aria-live="polite"></p>
+        </section>
+
+        <section aria-labelledby="tituloListaProductos">
+            <h2 id="tituloListaProductos">Lista de productos</h2>
+
+            <label for="inputBusquedaProducto">Buscar producto</label>
+            <input
+                type="search"
+                id="inputBusquedaProducto"
+                name="busquedaProducto"
+                placeholder="Buscar por nombre o categoria"
+            >
+
+            <p id="mensajeListaProductos" role="status" aria-live="polite"></p>
+
+            <table id="tablaProductos">
+                <caption>Productos registrados en el inventario</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaProductos"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/validaciones.js" defer></script>
+    <script src="../js/ui.js" defer></script>
+    <script src="../js/crud.js" defer></script>
+</body>
+</html>
