@@ -49,14 +49,31 @@ function crearCeldaAcciones(idProducto) {
     const botonEliminar = document.createElement("button");
 
     botonEditar.type = "button";
-    botonEditar.textContent = "Editar";
+    botonEditar.className = "botonEditarProducto"
+    //botonEditar.textContent = "Editar";
     botonEditar.dataset.accion = "editar";
     botonEditar.dataset.idProducto = String(idProducto);
 
+    const imgEditar = document.createElement("img");
+    imgEditar.src = "../img/icono-editar.png";
+    imgEditar.width = 16;
+    imgEditar.height = 16;
+
+    botonEditar.appendChild(imgEditar);
+
     botonEliminar.type = "button";
-    botonEliminar.textContent = "Eliminar";
+    botonEliminar.className = "botonEliminarProducto"
+    //botonEliminar.textContent = "Eliminar";
     botonEliminar.dataset.accion = "eliminar";
     botonEliminar.dataset.idProducto = String(idProducto);
+
+
+    const imgEliminar = document.createElement("img");
+    imgEliminar.src = "../img/icono-eliminar.png";
+    imgEliminar.width = 16;
+    imgEliminar.height = 16;
+
+    botonEliminar.appendChild(imgEliminar);
 
     celda.append(botonEditar, botonEliminar);
     return celda;
