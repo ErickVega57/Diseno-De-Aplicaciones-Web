@@ -204,3 +204,32 @@ select:focus{
         text-align: center;
     }
 }
+
+/*
+    BOTONES(EDITAR | ELIMINAR)
+*/
+
+button {
+    border-radius: 12px;    
+    border: none;   
+    padding: 12px 12px;      
+    font-size: 16px;
+    cursor: pointer;          
+}
+
+.botonEliminarProducto {
+    background-color: #D63E27;
+    margin: 5px;
+}
+
+.botonEliminarProducto:hover{
+    background-color: #A82A1D;
+}
+
+.botonEditarProducto {
+    background-color: #2563eb;
+    margin: 5px;
+}
+.botonEditarProducto:hover {
+    background-color: #1d4ed8;
+}
