@@ -264,6 +264,11 @@ function cancelarEdicion() {
 }
 
 function iniciarInventario() {
+    if (!window.gestionSesionDemo.existe()) {
+        window.location.assign("login.html");
+        return;
+    }
+
     elementosInventario = obtenerElementosInventario();
 
     try {
