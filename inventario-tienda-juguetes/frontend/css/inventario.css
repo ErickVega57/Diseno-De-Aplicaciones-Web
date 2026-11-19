@@ -1,0 +1,206 @@
+body{
+    margin: 0;
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+    background-image: url("../img/pelotas-fondo-jugueteria1.jpg");
+}
+
+header{
+    background-color: white;
+    padding: 1.5rem 2rem;
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.08);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    color: #1e293b;
+    margin: 0;
+}
+
+header nav a{
+
+    text-decoration: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: .8rem 1.2rem;
+
+    border-radius: 8px;
+}
+
+
+main{
+    width: 95%;
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns:
+        400px
+        1fr;
+    gap: 2rem;
+}
+
+main section{
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.07);
+}
+
+.titulos{
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+}
+
+.formularioProducto{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campoFormulario{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.labelCampoFormulario{
+    font-weight: 600;
+    color: #334155;
+}
+
+input, select{
+
+    padding: .9rem;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 8px;
+
+    font-size: .95rem;
+}
+
+input:focus,
+select:focus{
+    outline: none;
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,.15);
+}
+
+
+.formularioProducto div:last-child{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.botonGuardarProducto{
+
+    flex: 1;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-weight: 600;
+
+    padding: 1rem;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+.botonInventario:hover{
+
+    background-color: #1d4ed8;
+}
+
+#botonGuardarProducto{
+    border: none;
+    background-color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#inputBusquedaProducto{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+
+.tablaProductos{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablaProductos caption{
+
+    display: none;
+}
+
+.tablaProductos th{
+    background-color: #f8fafc;
+    color: #334155;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tablaProductos td{
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tablaProductos tbody tr:hover{
+    background-color: #f8fafc;
+}
+
+/* 
+   MENSAJES
+*/
+
+.mensaje{
+    margin-top: 1rem;
+    color: #64748b;
+}
+
+
+
+.mensajeTablaVacia{
+    text-align: center;
+    padding: 2rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+@media(max-width: 992px){
+    main{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 768px){
+    header{
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
