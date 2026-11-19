@@ -1,0 +1,207 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+    --color-secundario: #64748b;
+    --color-texto: #1e293b;
+    --color-texto-claro: #64748b;
+    --color-borde: #dbe2ea;
+    --color-fondo: #f8fafc;
+    --sombra-card:
+        0 10px 25px rgba(0, 0, 0, 0.713);
+}
+
+
+body{
+    margin: 0;
+    min-height: 10vh;
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+    background-color: var(--color-fondo);
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.25)
+        ),
+        url("../img/fondo-jugueteria.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.mainLogin{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjetaLogin{
+    width: 100vh;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--sombra-card);
+    margin: auto;
+}
+
+.encabezadoLogin{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logoJugueteria{
+    width: 160px;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.encabezadoLogin h1{
+    color: var(--color-texto);
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+.encabezadoLogin p{
+    color: var(--color-texto-claro);
+    font-size: .95rem;
+}
+
+
+.formularioLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.campo label{
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.campo input{
+    padding: .9rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.contenedorContrasena{
+    position: relative;
+}
+
+.contenedorContrasena input{
+    width: 100%;
+    padding-right: 3rem;
+}
+
+.botonMostrarContrasena{
+    position: absolute;
+    top: 50%;
+    right: .75rem;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--color-secundario);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.botonMostrarContrasena:focus{
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+}
+
+.iconoContrasena{
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.iconoContrasenaOculto{
+    display: none;
+}
+
+.campo input:focus{
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,.15);
+}
+
+
+.opcionesLogin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+    color: var(--color-secundario);
+}
+
+.botonIniciarSesion{
+    border: none;
+    background-color: var(--color-primario);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.botonIniciarSesion:hover{
+    background-color:var(--color-primario-hover);
+}
+
+
+.mensajeLogin{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.mensajeLogin.error{
+    color: #dc2626;
+}
+
+.mensajeLogin.exito{
+    color: #16a34a;
+}
+
+
+@media (max-width: 768px){
+    .tarjetaLogin{
+        padding: 1.5rem;
+    }
+    .encabezadoLogin h1{
+        font-size: 1.6rem;
+    }
+
+}
