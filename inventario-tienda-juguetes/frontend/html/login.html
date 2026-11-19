@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de inventario de productos de una jugueteria">
+    <title>Inicio de sesión</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <main class="mainLogin">
+        <section aria-labelledby="tituloFormularioProducto" class="tarjetaLogin">
+            <div class="encabezadoLogin">
+                <img src="../img/logo.png" alt="Logo de la juguetería"
+                class="logoJugueteria">
+
+                <h1>Iniciar Sesión</h1>
+                <p>Debes iniciar sesión para visualizar el inventario.</p>
+            </div>
+
+            <form id="formularioLogin" class="formularioLogin">
+                <div class="campo">
+                    <label for="inputUsuario">Usuario</label>
+                    <input
+                        type="text"
+                        id="inputUsuario"
+                        name="usuario"
+                        maxlength="100"
+                        placeholder="Ej. Valeria"
+                        required
+                    >
+                </div>
+                <div class="campo">
+                    <label for="inputContrasena">Contraseña</label>
+                    <input
+                        type="text"
+                        id="inputContrasena"
+                        name="contrasena"
+                        maxlength="100"
+                        placeholder="Ej. 1234"
+                        required
+                    >
+                </div>
+                <div class="opcionesLogin">
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="recordarUsuario"
+                            name="recordarUsuario">
+                        Recordar usuario
+                    </label>
+                </div>
+                <div class="campo">
+                    <button type="submit" class="botonIniciarSesion" id="botonIniciarSesion">Iniciar Sesión</button>
+                </div>
+            </form>
+            <div id="mensajeLogin" class="mensajeLogin">
+                <p>holaa</p>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
