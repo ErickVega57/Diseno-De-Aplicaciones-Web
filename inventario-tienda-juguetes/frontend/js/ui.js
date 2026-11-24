@@ -21,24 +21,31 @@ function crearCelda(texto) {
 
 function crearCeldaImagen(imagenProducto, nombreProducto) {
     const celda = document.createElement("td");
-
+    console.log("ANTES " + imagenProducto +".");
     if (
         imagenProducto.trim().length === 0
-        || !window.validacionesProducto.esUrlSegura(imagenProducto)
+        //|| !window.validacionesProducto.esUrlSegura(imagenProducto)
     ) {
+        console.log("no es URL de imagen segura " + imagenProducto +".");
         celda.textContent = "Sin imagen";
         return celda;
     }
 
-    const imagen = document.createElement("img");
-    imagen.src = imagenProducto;
-    imagen.alt = `Imagen de ${nombreProducto}`;
-    imagen.width = 80;
-    imagen.height = 80;
-    imagen.addEventListener("error", () => {
-        celda.textContent = "Imagen no disponible";
-    });
-    celda.appendChild(imagen);
+    //const imagen = document.createElement("img");
+    //imagen.src = imagenProducto;
+    //imagen.alt = `Imagen de ${nombreProducto}`;
+    //imagen.width = 80;
+    //imagen.height = 80;
+    const div = document.createElement("div");
+    div.className = "contenedorImagenProducto"
+    agregarImagenElemento(div, imagenProducto, "imagenProducto","",`Imagen de ${nombreProducto}`);
+
+    //const imagen = celda.querySelectorAll("img");
+    //imagen.addEventListener("error", () => {
+        //celda.textContent = "Imagen no disponible";
+    //});
+    celda.appendChild(div);
+
 
     return celda;
 }
@@ -50,33 +57,31 @@ function crearCeldaAcciones(idProducto) {
 
     botonEditar.type = "button";
     botonEditar.className = "botonEditarProducto"
-    //botonEditar.textContent = "Editar";
+   
     botonEditar.dataset.accion = "editar";
     botonEditar.dataset.idProducto = String(idProducto);
 
-    const imgEditar = document.createElement("img");
-    imgEditar.src = "../img/icono-editar.png";
-    imgEditar.width = 16;
-    imgEditar.height = 16;
-
-    botonEditar.appendChild(imgEditar);
+    agregarImagenElemento(botonEditar, "../img/icono-editar.png", "iconoAccion","iconoEditarProducto");
 
     botonEliminar.type = "button";
     botonEliminar.className = "botonEliminarProducto"
-    //botonEliminar.textContent = "Eliminar";
+
     botonEliminar.dataset.accion = "eliminar";
     botonEliminar.dataset.idProducto = String(idProducto);
 
-
-    const imgEliminar = document.createElement("img");
-    imgEliminar.src = "../img/icono-eliminar.png";
-    imgEliminar.width = 16;
-    imgEliminar.height = 16;
-
-    botonEliminar.appendChild(imgEliminar);
+    agregarImagenElemento(botonEliminar, "../img/icono-eliminar.png", "iconoAccion","iconoEliminarProducto");
 
     celda.append(botonEditar, botonEliminar);
     return celda;
+}
+
+function agregarImagenElemento(elemento, rutaImg, claseImg, idImg, alt=""){
+    const imagen = document.createElement("img");
+    imagen.src = rutaImg;
+    imagen.className = claseImg;
+    imagen.id = idImg;
+    imagen.alt = alt;
+    elemento.appendChild(imagen);
 }
 
 function crearFilaProducto(producto) {

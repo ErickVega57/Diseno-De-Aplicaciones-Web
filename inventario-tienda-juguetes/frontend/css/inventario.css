@@ -25,19 +25,18 @@ header h1{
     margin: 0;
 }
 
-header nav a{
+/* BotonCerrarSesion*/
+#enlaceCerrarSesion{
 
     text-decoration: none;
-
     background: #2563eb;
-
     color: white;
-
     padding: .8rem 1.2rem;
-
     border-radius: 8px;
 }
-
+#enlaceCerrarSesion:hover{
+    background-color: #143694;
+}
 
 main{
     width: 95%;
@@ -108,37 +107,6 @@ select:focus{
     gap: 1rem;
 }
 
-.botonGuardarProducto{
-
-    flex: 1;
-
-    border: none;
-
-    background-color: #2563eb;
-
-    color: white;
-
-    font-weight: 600;
-
-    padding: 1rem;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-}
-.botonInventario:hover{
-
-    background-color: #1d4ed8;
-}
-
-#botonGuardarProducto{
-    border: none;
-    background-color: #e2e8f0;
-    padding: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
 #inputBusquedaProducto{
     width: 100%;
     margin-bottom: 1.5rem;
@@ -206,7 +174,7 @@ select:focus{
 }
 
 /*
-    BOTONES(EDITAR | ELIMINAR)
+    BOTONES(EDITAR | ELIMINAR | INVENTARIO(LIMPIAR | GUARDAR))
 */
 
 button {
@@ -231,5 +199,90 @@ button {
     margin: 5px;
 }
 .botonEditarProducto:hover {
-    background-color: #1d4ed8;
+    background-color: #143694;
+}
+
+.botonInventario{
+    flex: 1;
+    border: none;
+    color: white;
+    font-weight: 400;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+#botonGuardarProducto{
+    background-color: #2563eb;
+}
+#botonGuardarProducto:hover{
+    background-color: #143694;
+}
+#botonLimpiarFormulario{
+    background-color: #64748b;
+}
+#botonLimpiarFormulario:hover{
+    background-color: #334155;
+}
+
+/* ICONOS */
+.iconoAccion{
+    width: 16px;
+    height: 16px;
+}
+#iconoEliminar{
+    alt:"";
+}
+#iconoEditar{
+    alt: "";
+}
+
+/*Imagenes de Productos*/
+.contenedorImagenProducto {
+    width: 100px;
+    height: 100px;
+}
+
+.imagenProducto{
+    width: 100%;
+    height: 100%;
+}
+
+.contenedorImagenProducto:right{
+    width: 200px;
+    height: 200px;
+}
+
+/* SUBIR ARCHIVO */
+#inputImagenProducto {
+    display: none;
+}
+
+.contenedorArchivo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #dbe2ea;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.botonArchivo {
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botonArchivo:hover {
+    background-color: #e2e8f0;
+}
+
+#textoNombreArchivo {
+    color: #64748b;
+    font-size: 0.9rem;
 }

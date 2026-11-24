@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Registro Producto</title>
+</head>
+<body>
+    <h2>Probar registrar producto</h2>
+    <form id="form-producto" action="/Diseno-De-Aplicaciones-Web/inventario-tienda-juguetes/backend/api/productos.php" method="POST">
+        <label>Nombre: <input type="text" name="nombre" value="Teclado Mecánico"></label><br><br>
+        <label>Precio: <input type="number" step="0.01" name="precio" value="799.50"></label><br><br>
+        <label>Stock: <input type="number" name="stock" value="15"></label><br><br>
+        <label>Imagen: <input type="text" name="nombre_imagen" value="teclado.png"></label><br><br>
+        <label>Categoría: <input type="text" name="categoria" value="Periféricos"></label><br><br>
+        <button type="submit">Enviar POST</button>
+    </form>
+
+    <div id="respuesta" style="margin-top: 20px;"></div>
+
+    <script>
+      const form = document.getElementById("form-producto");
+        const divRespuesta = document.getElementById("respuesta");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const payload = Object.fromEntries(formData.entries());
+
+            payload.precio = Number(payload.precio);
+            payload.stock = Number(payload.stock);
+
+            divRespuesta.textContent = "Enviando...";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const texto = await response.text();
+                let data = null;
+
+                try {
+                    data = JSON.parse(texto);
+                } catch {
+                    data = null;
+                }
+
+                if (data && data.mensaje) {
+                    divRespuesta.textContent = data.mensaje;
+                } else {
+                    divRespuesta.textContent = texto || `Respuesta HTTP ${response.status} sin mensaje.`;
+                }
+            } catch (error) {
+                divRespuesta.textContent = "Error de red al conectar con el servidor: " + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

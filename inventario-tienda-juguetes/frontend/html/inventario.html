@@ -83,13 +83,20 @@
                 </div>
 
                 <div class="campoFormulario">
-                    <label class="labelCampoFormulario" for="inputImagenProducto">URL de la imagen</label>
-                    <input class="inputCampoFormulario"
-                        type="url"
-                        id="inputImagenProducto"
-                        name="imagenProducto"
-                        placeholder="https://ejemplo.com/imagen.jpg"
-                    >
+                    <span class="labelCampoFormulario">Selecciona la imagen</span>
+
+                    <div class="contenedorArchivo">
+                        <label class="botonArchivo" for="inputImagenProducto">Elegir archivo</label>
+                        <span id="textoNombreArchivo">Ningún archivo seleccionado</span>
+                        <input
+                            class="inputCampoFormulario"
+                            type="file"
+                            id="inputImagenProducto"
+                            name="imagenProducto"
+                            accept="image/*"
+                            required
+                        >
+                    </div>
                 </div>
 
                 <div>
