@@ -20,6 +20,8 @@ $categoria = isset($datos["categoria"]) ? $datos["categoria"] : "";
 if($tipo_request === "GET"){
     $body = [];
     // Listar todos
+    echo manejar_listar_todos();
+    
 } elseif($tipo_request === "POST"){
     $body = [
         "nombre" => $nombre,

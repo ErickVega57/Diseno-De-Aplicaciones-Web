@@ -52,9 +52,27 @@ function registrar_producto($conn, $nombre_producto, $precio, $stock, $nombre_im
             "mensaje" => "No se ha podido registrar el producto"
         ];
     }
-
 }
 
+function listar_todos($conn){
+    $sql = "SELECT * FROM INVENTARIO ORDER BY id";
 
+    $result = mysqli_query($conn, $sql);
+    $productos = [];
+
+    while ($producto = mysqli_fetch_assoc($result)) {
+        $producto["id"] = (int)$producto["id"];
+        $producto["precio"] = (float)$producto["precio"];
+        $producto["stock"] = (int)$producto["stock"];
+        
+        $productos[] = $producto;
+    }
+
+    return [
+        "ok" => true,
+        "mensaje" => "productos listados correctamente",
+        "productos"=> $productos
+    ];
+}
 
 ?>

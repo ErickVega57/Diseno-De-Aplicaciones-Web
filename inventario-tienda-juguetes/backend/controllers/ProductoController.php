@@ -10,6 +10,23 @@ require_once(dirname(__DIR__) . "/models/Producto.php");
 include(dirname(__DIR__) . "/utils/respuestaJson.php");
 include(dirname(__DIR__) . "/utils/validaciones.php");
 
+function manejar_listar_todos(){
+    global $conn;
+
+    //LLAMAR A MODELO
+    $respuesta = listar_todos($conn);
+    
+    if($respuesta["ok"]){
+        return json_respuesta(HttpStatus::OK, [
+            "mensaje" => $respuesta["mensaje"],
+            "productos" => $respuesta["productos"]
+        ]);
+    } else {
+        return json_respuesta(HttpStatus::SERVER_ERROR, [
+                "mensaje" => $respuesta["mensaje"]
+        ]);
+    }
+}
 
 function manejar_registro_producto($producto){
     global $conn;
